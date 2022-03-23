@@ -25,7 +25,7 @@
 <div id="map"></div>
   <script>
     var map = L.map('map').setView([46.36, -77.79], 10);
-    L.tileLayer('https://api.maptiler.com/maps/streets/256/{z}/{x}/{y}.png?key=ZOKfZVjGlsT5S9mL4Xiz', {
+    L.tileLayer('https://api.maptiler.com/maps/topo/256/{z}/{x}/{y}.png?key=ZOKfZVjGlsT5S9mL4Xiz', {
       attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
     }).addTo(map);
     var geojsonLayer = new L.GeoJSON.AJAX("trail.json");
