@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      html,
+      body,
+      #map {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script type="text/javascript" src="leaflet_ajax.js"></script>
+  <title>Exploring Leaflet and OSM</title>
+</head>
+<body>
+
+<div id="map"></div>
+  <script>
+    var map = L.map('map').setView([46.36, -77.79], 10);
+    L.tileLayer('https://api.maptiler.com/maps/topo/tiles.json?key=ZOKfZVjGlsT5S9mL4Xiz', {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+      maxZoom: 18,
+    }).addTo(map);
+    var geojsonLayer = new L.GeoJSON.AJAX("trail.json");
+    geojsonLayer.addTo(map);
+  </script>
+</body>
+</html>
