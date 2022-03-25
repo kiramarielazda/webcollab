@@ -48,8 +48,7 @@
     var geojsonLayer = new L.GeoJSON.AJAX("trail.json", {
       pointToLayer: function(feature, latlng){
         return L.circleMarker(latlng, geojsonMarker);
-      },
-      style: myStyle,
+      }
     }).addTo(map);
     L.control.scale({metric:true, imperial:false}).addTo(map);
   </script>
