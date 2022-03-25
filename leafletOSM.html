@@ -47,13 +47,13 @@
     color: "#000",
     weight: 1,
     opacity: 1,
-    fillOpacity: 1
+    fillOpacity: 1,
+    pane: 'upper'
 };
     var linesgeojsonLayer = new L.GeoJSON.AJAX("lines.json", {style:myStyle, pane: 'middle'}).addTo(map);
     var pointgeojsonLayer = new L.GeoJSON.AJAX("points.json",{
       pointToLayer: function(feature, latlng){
-        return L.circleMarker(latlng, geojsonMarker, {
-          pane: 'upper'});
+        return L.circleMarker(latlng, geojsonMarker);
       }
     }).addTo(map);
     L.control.scale({metric:true, imperial:false}).addTo(map);
