@@ -45,11 +45,12 @@
     opacity: 1,
     fillOpacity: 0.8
 };
-    var geojsonLayer = new L.GeoJSON.AJAX("trail.json", {
+    var pointgeojsonLayer = new L.GeoJSON.AJAX("points.json", {
       pointToLayer: function(feature, latlng){
         return L.circleMarker(latlng, geojsonMarker);
       }
     }).addTo(map);
+    var linesgeojsonLayer = new L.GeoJSON.AJAX("lines.json", {style:myStyle}).addTo(map);
     L.control.scale({metric:true, imperial:false}).addTo(map);
   </script>
 </body>
