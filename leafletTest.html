@@ -21,17 +21,16 @@
   <title>Exploring Leaflet and OSM</title>
 </head>
 <body>
-
+  mapbox://styles/klazda/ck5fqbg7x25k11iuoiqyxr427
 <div id="map"></div>
   <script>
     var map = L.map('map').setView([46.36, -77.79], 10);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    L.tileLayer('https://api.mapbox.com/styles/v1/klazda/cl1dz1ta5002v15mq2c3j0ssi/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2xhemRhIiwiYSI6ImNrNTVmazFsdDAzYXYzZW1yOWVvZ3YzMDYifQ.UTJZn8nPgV7TePg5J9C7mg', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: 'mapbox/streets-v11',
       tileSize: 512,
       zoomOffset: -1,
-      accessToken: 'pk.eyJ1Ijoia2xhemRhIiwiYSI6ImNsMTFkMDRkZTJzc2kzZW9wd2FobnU1dzkifQ.HkZnUUGwsERQAH6aFt5ltA'
     }).addTo(map);
     var geojsonLayer = new L.GeoJSON.AJAX("trail.json");
     geojsonLayer.addTo(map);
